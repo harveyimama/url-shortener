@@ -1,0 +1,36 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>STORD URL Shortener</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="../static/css/w3.css" th:href="@{/css/style.css}">
+</head>
+<body>
+
+    
+    <h1>Harvey Imama's URL Shortener</h1>
+<form action="#" th:action="@{/shortenURL}"  method="post">
+  <input type="text" name="url" class="question" id="nme" required autocomplete="off" />
+  <label for="nme"><span>What Url Would you like to shorten?</span></label>
+  <input type="submit" value="Submit" />
+</form>
+   
+    <br/>
+   
+   <div th:if="${url}">
+   <h1> Result: </h1>
+   <div class="answer">
+    
+    <p class = "answer-span"  th:text="${url}"/> 
+    
+   </div>
+   </div>
+   
+   <div class="answer">
+   <p class = "error-span" th:text="${error != null} ?   ${error}"/>
+   </div>	
+   
+ 
+    
+</body>
+</html>
